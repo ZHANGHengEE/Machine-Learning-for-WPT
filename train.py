@@ -115,8 +115,8 @@ def evaluate(epoch, args, loader, model, metric_fn):
         data_txt.to(args.device), label.to(args.device), label_txt.to(args.device)
         predict_img, predict_txt = netG(data_txt)
         loss_img = metric_fn(predict_img.flatten(1), label.flatten(1))
-        # loss_txt = torch.abs(predict_txt - label_txt).mean()
-        loss_txt = (torch.abs(predict_txt - label_txt) / torch.abs(label_txt)).mean()
+        loss_txt = torch.abs(predict_txt - label_txt).mean()
+        
         
         metric_img.update(loss_img.item())
         metric_txt.update(loss_txt.item())
