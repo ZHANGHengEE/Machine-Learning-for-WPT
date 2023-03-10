@@ -1,0 +1,6 @@
+
+
+
+v1.20 初步gan
+v1.30 使用gan
+v1.31 使用gan 除掉了Discriminator
